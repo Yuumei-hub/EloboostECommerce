@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gWvPSAo3Bn3task+X0qPH/vHA8B1mDh2s+Wlp3ruzKM=",
+  "Hash": "8T2fsN9ZNgAiT2BI4cDwvhIcQF28xG5uSBHtsj7whHw=",
   "Source": "EloboostCommerce",
   "BasePath": "_content/EloboostCommerce",
   "Mode": "Default",
@@ -85,23 +85,6 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Acer\\source\\repos\\EloboostCommerce\\EloboostCommerce\\wwwroot\\glassmorphism-creative-cloud-app-redesign\\dist\\index.html",
-      "SourceId": "EloboostCommerce",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\source\\repos\\EloboostCommerce\\EloboostCommerce\\wwwroot\\",
-      "BasePath": "_content/EloboostCommerce",
-      "RelativePath": "glassmorphism-creative-cloud-app-redesign/dist/index.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\glassmorphism-creative-cloud-app-redesign\\dist\\index.html"
-    },
-    {
       "Identity": "C:\\Users\\Acer\\source\\repos\\EloboostCommerce\\EloboostCommerce\\wwwroot\\glassmorphism-creative-cloud-app-redesign\\dist\\script.js",
       "SourceId": "EloboostCommerce",
       "SourceType": "Discovered",
@@ -168,23 +151,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\glassmorphism-creative-cloud-app-redesign\\README.md"
-    },
-    {
-      "Identity": "C:\\Users\\Acer\\source\\repos\\EloboostCommerce\\EloboostCommerce\\wwwroot\\glassmorphism-creative-cloud-app-redesign\\src\\index.html",
-      "SourceId": "EloboostCommerce",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\source\\repos\\EloboostCommerce\\EloboostCommerce\\wwwroot\\",
-      "BasePath": "_content/EloboostCommerce",
-      "RelativePath": "glassmorphism-creative-cloud-app-redesign/src/index.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\glassmorphism-creative-cloud-app-redesign\\src\\index.html"
     },
     {
       "Identity": "C:\\Users\\Acer\\source\\repos\\EloboostCommerce\\EloboostCommerce\\wwwroot\\glassmorphism-creative-cloud-app-redesign\\src\\script.js",
