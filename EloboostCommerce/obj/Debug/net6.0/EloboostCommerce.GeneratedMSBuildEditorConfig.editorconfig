@@ -1,0 +1,60 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EloboostCommerce
+build_property.RootNamespace = EloboostCommerce
+build_property.ProjectDir = C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Checkout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Default/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Game/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Game/Overwatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxPdmVyd2F0Y2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

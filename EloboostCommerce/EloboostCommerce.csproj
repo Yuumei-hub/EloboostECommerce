@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\host\css\animate.css" />
+    <None Include="wwwroot\host\css\bootstrap.min.css" />
+    <None Include="wwwroot\host\css\style.css" />
+    <None Include="wwwroot\host\img\32.jpg" />
+    <None Include="wwwroot\host\img\banner.jpg" />
+    <None Include="wwwroot\host\img\customer1.jpg" />
+    <None Include="wwwroot\host\img\customer2.jpg" />
+    <None Include="wwwroot\host\img\customer3.jpg" />
+    <None Include="wwwroot\host\img\wordpress.jpg" />
+    <None Include="wwwroot\host\index.html" />
+    <None Include="wwwroot\host\js\animate.js" />
+    <None Include="wwwroot\host\js\bootstrap.min.js" />
+    <None Include="wwwroot\host\js\fontawesome.js" />
+    <None Include="wwwroot\host\js\jquery.min.js" />
+    <None Include="wwwroot\host\js\jquery.waypoints.min.js" />
+    <None Include="wwwroot\host\js\modernizr-3.5.0.min.js" />
+    <None Include="wwwroot\host\LICENSE.txt" />
+    <None Include="wwwroot\host\README.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+</Project>
