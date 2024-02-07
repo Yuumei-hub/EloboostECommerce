@@ -1,2 +1,3 @@
 EloboostCommerce/Models/Classes/Context
 EloboostCommerce/Migrations/*
+EloboostCommerce/Program.cs

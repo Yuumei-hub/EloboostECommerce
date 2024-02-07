@@ -83,9 +83,9 @@ namespace EloboostCommerce.Controllers
 
         private Cart GetOrCreateCartForUser()
         {
-            int userId = 3;
-            /*
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;*/
+            //int userId = 3;
+            
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null)
             {
                 // Redirect to login page or take appropriate action

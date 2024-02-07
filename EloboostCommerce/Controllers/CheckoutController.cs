@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Braintree;
 using EloboostCommerce.Models.Classes;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace EloboostCommerce.Controllers
 {
@@ -22,7 +24,9 @@ namespace EloboostCommerce.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            Cart cart = new Cart();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var cart = _context.Carts.Include(c => c.CartItems)
+                .FirstOrDefault(c => c.UserId == userId);
             decimal totalPrice = 0;
             foreach (var item in cart.CartItems)
             {
