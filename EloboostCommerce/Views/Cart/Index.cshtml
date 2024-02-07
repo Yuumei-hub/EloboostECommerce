@@ -52,9 +52,12 @@
                     <span class="status-circle green"></span>
                     @cartItem.Quantity
                 </span>
-                <div class="button-wrapper">
-                    <button class="content-button status-button open">Delete</button>
-                </div>
+                <form>
+                    <input type="hidden" name="cartItemid" value="@cartItem.CartItemId">
+                    <div class="button-wrapper">
+                        <button class="content-button status-button open" asp-action="DeleteCartItem" asp-controller="Cart">Delete</button>
+                    </div>
+                </form>
             </li>
         }
     </ul>
@@ -79,10 +82,12 @@
                                 cursor: pointer;">
                     <div class="btn" style="top:25px;display:none;"></div>
                     <div class="btn" style="top:25px;display:none;"></div>
-                    <div class="btn" style="top:25px;width:205px;height:50px;"><a>Check out!</a></div>
+                    <div class="btn" style="top:25px;width:205px;height:50px;"><a asp-action="Index" asp-controller="Checkout">Check out!</a></div>
                 </button>
             </div>
 
         </div>
     </div>
 </div>
+
+

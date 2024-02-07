@@ -15,12 +15,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Aboutus/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXR1c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Checkout/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Checkout/PaymentError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcUGF5bWVudEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Checkout/PaymentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcUGF5bWVudFN1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Acer/source/repos/EloboostCommerce/EloboostCommerce/Views/Default/Index.cshtml]

@@ -1,6 +1,9 @@
 using EloboostCommerce.Models.Classes;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Context>(options =>
@@ -37,7 +40,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Index}/{id?}");
-
-
 
 app.Run();
