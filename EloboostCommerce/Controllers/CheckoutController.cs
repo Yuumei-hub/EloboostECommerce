@@ -14,9 +14,9 @@ namespace EloboostCommerce.Controllers
         {
             _gateway = new BraintreeGateway {
                 Environment = Braintree.Environment.SANDBOX,
-                MerchantId = "mzdfpt5xgs2rz5r6",
-                PublicKey= "2r9qpyh724v86vyv",
-                PrivateKey= "a803df595ad0007c06e390b5aeb607fa"
+                MerchantId = "c9rs7fgqwjgk2r5m",
+                PublicKey= "grr83dzzx7knhhbd",
+                PrivateKey= "66d4114467e41e1af39a46ae7f22924e"
             };
             _context = context;
         }
@@ -38,12 +38,19 @@ namespace EloboostCommerce.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ProcessPayment(string nonce, decimal amount)
+        public async Task<IActionResult> ProcessPayment(string cardNumber, string expiryDate, string cvv, string holderName ,string nonce, decimal amount)
         {
             var request = new TransactionRequest { 
                 Amount=amount,
                 PaymentMethodNonce=nonce,
-                Options=new TransactionOptionsRequest
+                CreditCard=new TransactionCreditCardRequest
+                {
+                    Number=cardNumber,
+                    CardholderName=holderName,
+                    ExpirationDate=expiryDate,
+                    CVV=cvv,
+                },
+                Options= new TransactionOptionsRequest
                 {
                     SubmitForSettlement=true
                 }
