@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+.product1 {
+    padding: 0 14.5px;
+    width: 25%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+.configuratorbigger {
+    padding:25px;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 700px;
+    height: 650px;
+    background-color: #f8f8f8;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 2;
+}
+.configurator {
+    margin-left:25px;
+    top: 300px;
+    left: 50px;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 650px;
+    background-color: #f8f8f8;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.productPrice {
+    position: absolute;
+    top: 410px;
+    width: 100px;
+    height: 100px;
+    margin-left: 28px;
+    height: 30%;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    align-items: center;
+}
+.product-display {
+    text-align: center;
+}
+
+#productImage {
+    max-width: 100%;
+    height: auto;
+}
+
+.pric-option {
+    font-style: normal;
+    cursor: pointer;
+    line-height: 16px;
+    user-select: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: Roboto-Bold;
+}
+
+.checkbox-wrapper-57 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper-57 *,
+.checkbox-wrapper-57 ::after,
+.checkbox-wrapper-57 ::before {
+    box-sizing: border-box;
+}
+
+.checkbox-wrapper-57 .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkbox-wrapper-57 .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 0.65em;
+    width: 0.65em;
+    background: black;
+    border-radius: 50px;
+    transition: all 0.7s;
+    --spread: 20px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-wrapper-57 .container input:checked ~ .checkmark {
+    background: black;
+    box-shadow: -10px -10px var(--spread) 0px #5B51D8, 0 -10px var(--spread) 0px #833AB4, 10px -10px var(--spread) 0px #E1306C, 10px 0 var(--spread) 0px #FD1D1D, 10px 10px var(--spread) 0px #F77737, 0 10px var(--spread) 0px #FCAF45, -10px 10px var(--spread) 0px #FFDC80;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-wrapper-57 .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-wrapper-57 .container input:checked ~ .checkmark::after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-wrapper-57 .container .checkmark::after {
+    left: 0.2em;
+    top: 0.1em;
+    width: 0.20em;
+    height: 0.40em;
+    border: solid #f0f0f0;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+
+.container {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+    .container .btn {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 50px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .container .btn a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 10px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            overflow: hidden;
+            color: #fff;
+            font-weight: 400px;
+            z-index: 1;
+            transition: 0.5s;
+            backdrop-filter: blur(15px);
+        }
+
+        .container .btn:hover a {
+            letter-spacing: 3px;
+        }
+
+        .container .btn a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+            transform: skewX(45deg) translate(0);
+            transition: 0.5s;
+            filter: blur(0px);
+        }
+
+        .container .btn:hover a::before {
+            transform: skewX(45deg) translate(200px);
+        }
+
+        .container .btn::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+            bottom: -5px;
+            width: 30px;
+            height: 10px;
+            background: #f00;
+            border-radius: 10px;
+            transition: 0.5s;
+            transition-delay: 0.5;
+        }
+
+        .container .btn:hover::before /*lightup button*/ {
+            bottom: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        .container .btn::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+            top: -5px;
+            width: 30px;
+            height: 10px;
+            background: #f00;
+            border-radius: 10px;
+            transition: 0.5s;
+            transition-delay: 0.5;
+        }
+
+        .container .btn:hover::after /*lightup button*/ {
+            top: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        .container .btn:nth-child(1)::before, /*chnage 1*/
+        .container .btn:nth-child(1)::after {
+            background: #ff1f71;
+            box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71, 0 0 60px #ff1f71;
+        }
+
+        .container .btn:nth-child(2)::before, /* 2*/
+        .container .btn:nth-child(2)::after {
+            background: #2db2ff;
+            box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff, 0 0 60px #2db2ff;
+        }
+
+        .container .btn:nth-child(3)::before, /* 3*/
+        .container .btn:nth-child(3)::after {
+            background: #1eff45;
+            box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45, 0 0 60px #1eff45;
+        }
+
+.neon {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+}

@@ -1,0 +1,44 @@
+﻿@using EloboostCommerce.Models.Classes
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@model List<Game>
+@{
+    int gameCounter = 0;
+}
+<div class="content-section">
+
+<div class="content-section-title">Games</div>
+<div class="content-section">
+    <div class="apps-card" style="margin-right:15px;">
+        @foreach (var item in Model)
+        {
+            gameCounter++;
+            if(gameCounter==1){
+                <div class="app-card" style="height:222px;margin-left:20px;">
+                    <a href="@Url.Action("Overwatch","Game")" >
+                        <img src="@item.ImageUrl2" style="border-radius:10px;width: 100%; height: 100%;">
+                    </a>
+                </div>
+
+            }
+            else if(gameCounter>1&&gameCounter<4){
+                <div class="app-card" style="height:222px;margin-left:20px;">
+                    <a href="@Url.Action("Overwatch","Game")">
+                        <img src="@item.ImageUrl2" style="border-radius:10px;width: 100%; height: 100%;">
+                    </a>
+
+                </div>
+            }
+            else{
+                <div class="app-card" style="height:222px;margin-left:20px;margin-top:20px;">
+                    <a href="@Url.Action("Overwatch","Game")">
+                        <img src="@item.ImageUrl2" style="border-radius:10px;width: 100%; height: 100%;">
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>
+</div>
