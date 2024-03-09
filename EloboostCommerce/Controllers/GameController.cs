@@ -18,15 +18,15 @@ namespace EloboostCommerce.Controllers
             return View(games);
         }
 
-        public IActionResult Overwatch()
+        public IActionResult GameRedirector(int gameId)
         {
-            Game overwatch = _context.Games.First(g => g.GameId == 1);
+            Game game = _context.Games.First(g => g.GameId == gameId);
             // Serialize the model into JSON format
-            var serializedModel = JsonConvert.SerializeObject(overwatch);
+            var serializedModel = JsonConvert.SerializeObject(game);
 
             // Pass the serialized JSON data to the view
             ViewBag.SerializedModel = serializedModel;
-            return View(overwatch);
+            return View("Overwatch",game);
         }
     }
 }

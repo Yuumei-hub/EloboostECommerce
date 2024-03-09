@@ -5,11 +5,15 @@ namespace EloboostCommerce.Models.Classes
     public class Order
     {
         [Key]
-        public int GameId { get; set; }
-        public string? ToRankName { get; set; }
-        public string? FromRankName { get; set; }
-        public int? ToRankValue { get; set; }
-        public int? FromRankValue { get; set; }
+        public int OrderId { get; set; }
+        [Required]
+        public string CustomerName { get; set; }
+        public int CustomerId { get; set; } //FK
+        [Required]
+        public string ProductName { get; set; }
+        public int ProductId { get; set; }//FK
+        [Required]
         public int? Price { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }
