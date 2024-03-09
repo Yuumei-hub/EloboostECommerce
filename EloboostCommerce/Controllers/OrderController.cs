@@ -83,6 +83,7 @@ namespace EloboostCommerce.Controllers
             return View(order);
         
         }
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int orderId)
