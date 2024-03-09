@@ -242,3 +242,6 @@ C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\ru
 C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Braintree.dll
 C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

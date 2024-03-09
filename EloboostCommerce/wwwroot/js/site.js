@@ -6,8 +6,11 @@ function redirectToGameIndex(){
 
 document.addEventListener('DOMContentLoaded', function () {
     //const variables
+    const gameId = document.getElementById('gameId').value;
+    /*
     const gameimgurl = document.getElementById('productImage').src;
     const gamename = document.getElementById('gamename').textContent;
+    */
     const productPrice = document.getElementById('productPrice');
     const select1 = document.getElementById('select1');
     const select2 = document.getElementById('select2');
@@ -40,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
         //game-specific properties here
 
         //AJAX request to controller action
-        sendBuyNowRequest(fromSkillRating,toSkillRating,price,gamename,gameimgurl, quantity);
+        sendBuyNowRequest(fromSkillRating,toSkillRating,price,gameId, quantity);
     }
-    function sendBuyNowRequest(fromSkillRating, toSkillRating, price,gamename,gameimgurl,quantity) {
+    function sendBuyNowRequest(fromSkillRating, toSkillRating, price,gameId,quantity) {
         $.ajax({
             url: "/Cart/AddCartItem",
             type: "POST",
@@ -51,8 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fromSkillRating: fromSkillRating,
                 toSkillRating: toSkillRating,
                 price: price,
-                gamename: gamename,
-                gameimgurl: gameimgurl,
+                gameId: gameId
             },
             success: function (result) {
                 window.location.href = "/Cart/Index";

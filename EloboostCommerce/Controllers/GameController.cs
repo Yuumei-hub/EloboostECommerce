@@ -1,5 +1,6 @@
 ﻿using EloboostCommerce.Models.Classes;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace EloboostCommerce.Controllers
 {
@@ -19,7 +20,13 @@ namespace EloboostCommerce.Controllers
 
         public IActionResult Overwatch()
         {
-            return View();
+            Game overwatch = _context.Games.First(g => g.GameId == 1);
+            // Serialize the model into JSON format
+            var serializedModel = JsonConvert.SerializeObject(overwatch);
+
+            // Pass the serialized JSON data to the view
+            ViewBag.SerializedModel = serializedModel;
+            return View(overwatch);
         }
     }
 }

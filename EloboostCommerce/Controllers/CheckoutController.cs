@@ -25,7 +25,6 @@ namespace EloboostCommerce.Controllers
         public IActionResult Index()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            //test commment
             var cart = _context.Carts.Include(c => c.CartItems)
                 .FirstOrDefault(c => c.UserId == userId);
             decimal totalPrice = 0;
