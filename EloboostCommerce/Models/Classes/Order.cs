@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Iyzipay.Model.V2.Subscription;
+using System.ComponentModel.DataAnnotations;
 
 namespace EloboostCommerce.Models.Classes
 {
@@ -7,15 +8,12 @@ namespace EloboostCommerce.Models.Classes
         [Key]
         public int OrderId { get; set; }
         [Required]
-        public string CustomerName { get; set; }
-        public int CustomerId { get; set; } //FK
-        [Required]
-        public string ProductName { get; set; }
-        public int ProductId { get; set; }//FK
-        [Required]
-        public int? Price { get; set; }
-        public DateTime OrderDate { get; set; }
-
+        public User User { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
+        public decimal Amount { get; set; }
+        public string PaymentMethod { get; set; }
         public string Status { get; set; }
+        public DateTime OrderDate { get; set; }
     }
+
 }

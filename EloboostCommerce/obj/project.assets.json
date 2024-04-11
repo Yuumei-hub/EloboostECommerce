@@ -2,36 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "APIMatic.Core/0.3.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Microsoft.Json.Pointer": "2.3.0",
-          "Newtonsoft.Json": "13.0.2",
-          "Polly": "7.2.3",
-          "System.Collections.Immutable": "7.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/APIMatic.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/APIMatic.Core.dll": {}
-        }
-      },
-      "Braintree/5.23.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Newtonsoft.Json": "13.0.1",
-          "System.Xml.XPath.XmlDocument": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Braintree.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Braintree.dll": {}
-        }
-      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -732,17 +702,6 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.Bcl.HashCode/1.1.1": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {
             "related": ".xml"
           }
         }
@@ -1711,19 +1670,6 @@
           }
         }
       },
-      "Microsoft.Json.Pointer/2.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Json.Pointer.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Json.Pointer.dll": {}
-        }
-      },
       "Microsoft.NET.StringTools/17.3.2": {
         "type": "package",
         "dependencies": {
@@ -2152,45 +2098,6 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
-      "Polly/7.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Polly.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Polly.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "RestSharp/105.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net46/RestSharp.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net46/RestSharp.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "RestSharp.Newtonsoft.Json/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "8.0.2",
-          "RestSharp": "105.2.3"
-        },
-        "compile": {
-          "lib/net45/RestSharp.Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/RestSharp.Newtonsoft.Json.dll": {}
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -2362,42 +2269,6 @@
           }
         }
       },
-      "Square/35.1.0": {
-        "type": "package",
-        "dependencies": {
-          "APIMatic.Core": "0.3.6",
-          "Microsoft.Bcl.HashCode": "1.1.1",
-          "Microsoft.CSharp": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Square.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Square.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "SquareConnectApiClient/1.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "8.0.3",
-          "RestSharp": "105.2.3",
-          "RestSharp.Newtonsoft.Json": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/SquareConnectApiClient.Client.dll": {},
-          "lib/net45/SquareConnectApiClient.V1.dll": {},
-          "lib/net45/SquareConnectApiClient.V2.dll": {}
-        },
-        "runtime": {
-          "lib/net45/SquareConnectApiClient.Client.dll": {},
-          "lib/net45/SquareConnectApiClient.V1.dll": {},
-          "lib/net45/SquareConnectApiClient.V2.dll": {}
-        }
-      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2464,7 +2335,7 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
-      "System.Collections.Immutable/7.0.0": {
+      "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -2480,7 +2351,7 @@
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
       "System.Composition/1.0.31": {
@@ -3923,106 +3794,10 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
-      },
-      "System.Xml.XmlDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XmlDocument.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
-        }
-      },
-      "System.Xml.XPath/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.dll": {}
-        }
-      },
-      "System.Xml.XPath.XmlDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XPath": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "APIMatic.Core/0.3.6": {
-      "sha512": "tkVaBN0b26KcUeg2leyqj8Fvh2D0+zqWTIhpVY4baTrBvB57HyCq/zMmDkmSawSm4KX9D271+v/PQvS86DeIBA==",
-      "type": "package",
-      "path": "apimatic.core/0.3.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "README.md",
-        "apimatic.core.0.3.6.nupkg.sha512",
-        "apimatic.core.nuspec",
-        "icon.png",
-        "lib/netstandard2.0/APIMatic.Core.dll"
-      ]
-    },
-    "Braintree/5.23.0": {
-      "sha512": "FYnzYX+Nklzf9vQJ/pSQ2qycLHiVBpKWppY1y55ycQ0Is1sdEGS5slc1whpNWEtMmr8QPa0TVZbhWmKUeQJeOA==",
-      "type": "package",
-      "path": "braintree/5.23.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "braintree.5.23.0.nupkg.sha512",
-        "braintree.nuspec",
-        "lib/net452/Braintree.dll",
-        "lib/netstandard2.0/Braintree.dll"
-      ]
-    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -4894,34 +4669,6 @@
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
         "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "Microsoft.Bcl.HashCode/1.1.1": {
-      "sha512": "MalY0Y/uM/LjXtHfX/26l2VtN4LDNZ2OE3aumNOHDLsT4fNYy2hiHXI4CXCqKpNUNm7iJ2brrc4J89UdaL56FA==",
-      "type": "package",
-      "path": "microsoft.bcl.hashcode/1.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Bcl.HashCode.dll",
-        "lib/net461/Microsoft.Bcl.HashCode.xml",
-        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
-        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.xml",
-        "lib/netstandard2.0/Microsoft.Bcl.HashCode.dll",
-        "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
-        "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
-        "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
-        "microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
-        "microsoft.bcl.hashcode.nuspec",
-        "ref/net461/Microsoft.Bcl.HashCode.dll",
-        "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
-        "ref/netstandard2.0/Microsoft.Bcl.HashCode.dll",
-        "ref/netstandard2.1/Microsoft.Bcl.HashCode.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -6090,19 +5837,6 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.Json.Pointer/2.3.0": {
-      "sha512": "dP5d8Mo1vcqzWqY8StKoFNJNOdEDLkqg+GGQMAZgM9fNDQqekey9G0edIjEDGboY7yRjAJHGiuhc8/w45O6Ncw==",
-      "type": "package",
-      "path": "microsoft.json.pointer/2.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/Microsoft.Json.Pointer.dll",
-        "lib/netstandard2.0/Microsoft.Json.Pointer.dll",
-        "microsoft.json.pointer.2.3.0.nupkg.sha512",
-        "microsoft.json.pointer.nuspec"
-      ]
-    },
     "Microsoft.NET.StringTools/17.3.2": {
       "sha512": "3sIZECEDSY9kP7BqPLOSIHLsiqv0TSU5cIGAMung+NrefIooo1tBMVRt598CGz+kUF1xlbOsO8nPAYpgfokx/Q==",
       "type": "package",
@@ -7057,80 +6791,6 @@
         "nuget.versioning.nuspec"
       ]
     },
-    "Polly/7.2.3": {
-      "sha512": "DeCY0OFbNdNxsjntr1gTXHJ5pKUwYzp04Er2LLeN3g6pWhffsGuKVfMBLe1lw7x76HrPkLxKEFxBlpRxS2nDEQ==",
-      "type": "package",
-      "path": "polly/7.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Polly.png",
-        "lib/net461/Polly.dll",
-        "lib/net461/Polly.pdb",
-        "lib/net461/Polly.xml",
-        "lib/net472/Polly.dll",
-        "lib/net472/Polly.pdb",
-        "lib/net472/Polly.xml",
-        "lib/netstandard1.1/Polly.dll",
-        "lib/netstandard1.1/Polly.pdb",
-        "lib/netstandard1.1/Polly.xml",
-        "lib/netstandard2.0/Polly.dll",
-        "lib/netstandard2.0/Polly.pdb",
-        "lib/netstandard2.0/Polly.xml",
-        "polly.7.2.3.nupkg.sha512",
-        "polly.nuspec"
-      ]
-    },
-    "RestSharp/105.2.3": {
-      "sha512": "aR2Td2s7DUHSk+H3EdcJ7pAju3JLYUZMwWmkVNtiEl4pAQuQCnU218YMMAdPbTdw0PJnGqLwrJxWr1RdL4ADeQ==",
-      "type": "package",
-      "path": "restsharp/105.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/RestSharp.dll",
-        "lib/MonoAndroid10/RestSharp.xml",
-        "lib/MonoTouch10/RestSharp.dll",
-        "lib/MonoTouch10/RestSharp.xml",
-        "lib/Xamarin.iOS10/RestSharp.dll",
-        "lib/Xamarin.iOS10/RestSharp.xml",
-        "lib/net35/RestSharp.dll",
-        "lib/net35/RestSharp.xml",
-        "lib/net4-client/RestSharp.dll",
-        "lib/net4-client/RestSharp.xml",
-        "lib/net4/RestSharp.dll",
-        "lib/net4/RestSharp.xml",
-        "lib/net45/RestSharp.dll",
-        "lib/net45/RestSharp.xml",
-        "lib/net451/RestSharp.dll",
-        "lib/net451/RestSharp.xml",
-        "lib/net452/RestSharp.dll",
-        "lib/net452/RestSharp.xml",
-        "lib/net46/RestSharp.dll",
-        "lib/net46/RestSharp.xml",
-        "lib/sl5/RestSharp.dll",
-        "lib/sl5/RestSharp.xml",
-        "lib/windowsphone8/RestSharp.dll",
-        "lib/windowsphone8/RestSharp.xml",
-        "lib/windowsphone81/RestSharp.dll",
-        "lib/windowsphone81/RestSharp.xml",
-        "readme.txt",
-        "restsharp.105.2.3.nupkg.sha512",
-        "restsharp.nuspec"
-      ]
-    },
-    "RestSharp.Newtonsoft.Json/1.0.0": {
-      "sha512": "IztKxD+drC1rpEn/HCRa70NnPxUe2ZzEn68rA7B17dvYaCi57fSDPaG/gwMPy6T0GhAec8pBXQsVwW8jm30bvg==",
-      "type": "package",
-      "path": "restsharp.newtonsoft.json/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/RestSharp.Newtonsoft.Json.dll",
-        "restsharp.newtonsoft.json.1.0.0.nupkg.sha512",
-        "restsharp.newtonsoft.json.nuspec"
-      ]
-    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -7355,35 +7015,6 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Square/35.1.0": {
-      "sha512": "/TJ0fPpIdDCMK84Ql/l1AxtbRKEMNkDxAGBuC8G4b2umao+QyPJKOF2At6RsJmK3QQY4AqgR19JejITiZEpRgw==",
-      "type": "package",
-      "path": "square/35.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "README.md",
-        "lib/netstandard2.0/Square.dll",
-        "lib/netstandard2.0/Square.xml",
-        "square.35.1.0.nupkg.sha512",
-        "square.nuspec"
-      ]
-    },
-    "SquareConnectApiClient/1.2.1": {
-      "sha512": "xfwyOdUsbFS9a+7jmvpeYQdEjzRAn7DtVUQqyJuZ55aM5uLC2e0cRuAY/0LzcV5DttcCNBaiSfTlxja4b0T/tA==",
-      "type": "package",
-      "path": "squareconnectapiclient/1.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/SquareConnectApiClient.Client.dll",
-        "lib/net45/SquareConnectApiClient.V1.dll",
-        "lib/net45/SquareConnectApiClient.V2.dll",
-        "squareconnectapiclient.1.2.1.nupkg.sha512",
-        "squareconnectapiclient.nuspec"
-      ]
-    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -7590,30 +7221,25 @@
         "system.collections.concurrent.nuspec"
       ]
     },
-    "System.Collections.Immutable/7.0.0": {
-      "sha512": "dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+    "System.Collections.Immutable/6.0.0": {
+      "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "type": "package",
-      "path": "system.collections.immutable/7.0.0",
+      "path": "system.collections.immutable/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
-        "README.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Collections.Immutable.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets",
-        "lib/net462/System.Collections.Immutable.dll",
-        "lib/net462/System.Collections.Immutable.xml",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Collections.Immutable.dll",
+        "lib/net461/System.Collections.Immutable.xml",
         "lib/net6.0/System.Collections.Immutable.dll",
         "lib/net6.0/System.Collections.Immutable.xml",
-        "lib/net7.0/System.Collections.Immutable.dll",
-        "lib/net7.0/System.Collections.Immutable.xml",
         "lib/netstandard2.0/System.Collections.Immutable.dll",
         "lib/netstandard2.0/System.Collections.Immutable.xml",
-        "system.collections.immutable.7.0.0.nupkg.sha512",
+        "system.collections.immutable.6.0.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -11188,127 +10814,10 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-    },
-    "System.Xml.XmlDocument/4.3.0": {
-      "sha512": "lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
-      "type": "package",
-      "path": "system.xml.xmldocument/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Xml.XmlDocument.dll",
-        "lib/netstandard1.3/System.Xml.XmlDocument.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Xml.XmlDocument.dll",
-        "ref/netstandard1.3/System.Xml.XmlDocument.dll",
-        "ref/netstandard1.3/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/de/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/es/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/fr/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/it/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/ja/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/ko/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/ru/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/zh-hans/System.Xml.XmlDocument.xml",
-        "ref/netstandard1.3/zh-hant/System.Xml.XmlDocument.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.xml.xmldocument.4.3.0.nupkg.sha512",
-        "system.xml.xmldocument.nuspec"
-      ]
-    },
-    "System.Xml.XPath/4.3.0": {
-      "sha512": "v1JQ5SETnQusqmS3RwStF7vwQ3L02imIzl++sewmt23VGygix04pEH+FCj1yWb+z4GDzKiljr1W7Wfvrx0YwgA==",
-      "type": "package",
-      "path": "system.xml.xpath/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Xml.XPath.dll",
-        "lib/netstandard1.3/System.Xml.XPath.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Xml.XPath.dll",
-        "ref/netstandard1.3/System.Xml.XPath.dll",
-        "ref/netstandard1.3/System.Xml.XPath.xml",
-        "ref/netstandard1.3/de/System.Xml.XPath.xml",
-        "ref/netstandard1.3/es/System.Xml.XPath.xml",
-        "ref/netstandard1.3/fr/System.Xml.XPath.xml",
-        "ref/netstandard1.3/it/System.Xml.XPath.xml",
-        "ref/netstandard1.3/ja/System.Xml.XPath.xml",
-        "ref/netstandard1.3/ko/System.Xml.XPath.xml",
-        "ref/netstandard1.3/ru/System.Xml.XPath.xml",
-        "ref/netstandard1.3/zh-hans/System.Xml.XPath.xml",
-        "ref/netstandard1.3/zh-hant/System.Xml.XPath.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.xml.xpath.4.3.0.nupkg.sha512",
-        "system.xml.xpath.nuspec"
-      ]
-    },
-    "System.Xml.XPath.XmlDocument/4.3.0": {
-      "sha512": "A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
-      "type": "package",
-      "path": "system.xml.xpath.xmldocument/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Xml.XPath.XmlDocument.dll",
-        "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll",
-        "ref/netstandard1.3/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/de/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/es/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/fr/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/it/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/ja/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/ko/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/ru/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/zh-hans/System.Xml.XPath.XmlDocument.xml",
-        "ref/netstandard1.3/zh-hant/System.Xml.XPath.XmlDocument.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
-        "system.xml.xpath.xmldocument.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Braintree >= 5.23.0",
       "Iyzipay >= 2.1.61",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.22",
@@ -11316,9 +10825,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.22",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.22",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
-      "Newtonsoft.Json >= 13.0.3",
-      "Square >= 35.1.0",
-      "SquareConnectApiClient >= 1.2.1"
+      "Newtonsoft.Json >= 13.0.3"
     ]
   },
   "packageFolders": {
@@ -11366,10 +10873,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "Braintree": {
-            "target": "Package",
-            "version": "[5.23.0, )"
-          },
           "Iyzipay": {
             "target": "Package",
             "version": "[2.1.61, )"
@@ -11405,14 +10908,6 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
-          },
-          "Square": {
-            "target": "Package",
-            "version": "[35.1.0, )"
-          },
-          "SquareConnectApiClient": {
-            "target": "Package",
-            "version": "[1.2.1, )"
           }
         },
         "imports": [
@@ -11437,37 +10932,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'RestSharp 105.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "RestSharp",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'RestSharp.Newtonsoft.Json 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "RestSharp.Newtonsoft.Json",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'SquareConnectApiClient 1.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "SquareConnectApiClient",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

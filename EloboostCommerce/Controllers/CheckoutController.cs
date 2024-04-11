@@ -20,6 +20,9 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 using HttpClient = System.Net.Http.HttpClient;
+using System.Globalization;
+using NuGet.ContentModel;
+using System.Net.Http;
 
 namespace EloboostCommerce.Controllers
 {
@@ -27,7 +30,12 @@ namespace EloboostCommerce.Controllers
     {
         private readonly Context _context;
         private string _conversationId = Guid.NewGuid().ToString();
-
+        Options options = new Options
+        {
+            ApiKey = "sandbox-Ikx8vXkZKX6YJDDlVWGDlMn4DYnyRNek",
+            SecretKey = "sandbox-yhvcanALA1mdYI5mMAUkoizZJ4eSu5Sr",
+            BaseUrl = "https://sandbox-api.iyzipay.com"
+        };
         public CheckoutController(Context context)
         {
             _context = context;
@@ -37,6 +45,7 @@ namespace EloboostCommerce.Controllers
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var cart = _context.Carts.Include(c => c.CartItems).FirstOrDefault(c => c.UserId == userId);
+
             decimal price = 0;
             foreach (var item in cart.CartItems)
             {
@@ -46,34 +55,12 @@ namespace EloboostCommerce.Controllers
         }
         //----------------------------
 
-
         //CF Başlatma
         public IActionResult PaymentProcess()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var cart = _context.Carts.Include(c => c.CartItems)
                 .FirstOrDefault(c => c.UserId == userId);
-
-            Options options = new Options
-            {
-                ApiKey = "sandbox-Ikx8vXkZKX6YJDDlVWGDlMn4DYnyRNek",
-                SecretKey = "sandbox-yhvcanALA1mdYI5mMAUkoizZJ4eSu5Sr",
-                BaseUrl = "https://sandbox-api.iyzipay.com"
-            };
-
-            CreatePaymentRequest request = new CreatePaymentRequest
-            {
-                Locale = Locale.EN.ToString(),
-                ConversationId = _conversationId,
-                Price = CalculatePrice().ToString(),
-                PaidPrice = CalculatePrice().ToString(),
-                Currency = Currency.USD.ToString(),
-                Installment = 1,
-                BasketId = cart.CartId.ToString(),
-                PaymentChannel = PaymentChannel.WEB.ToString(),
-                PaymentGroup = PaymentGroup.PRODUCT.ToString()
-            };
-            request.CallbackUrl = "https://localhost:44385/Checkout/PaymentCallback";
 
             Buyer buyer = new Buyer
             {
@@ -88,7 +75,6 @@ namespace EloboostCommerce.Controllers
                 Country = "countryname",
                 ZipCode = ""
             };
-            request.Buyer = buyer;
 
             Address billingAddress = new Address
             {
@@ -98,7 +84,6 @@ namespace EloboostCommerce.Controllers
                 Description = "Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1",
                 ZipCode = "34742"
             };
-            request.BillingAddress = billingAddress;
 
             List<BasketItem> basketItems = new List<BasketItem>();
 
@@ -109,73 +94,80 @@ namespace EloboostCommerce.Controllers
                     Id = cartItem.CartItemId.ToString(),
                     Name = cartItem.GameName,
                     Category1 = "Eloboost",
-                    Category2 = "category2",
+                    Category2 = "Online Game Items",
                     ItemType = BasketItemType.VIRTUAL.ToString(),
                     Price = cartItem.Price.ToString(),
                 };
                  basketItems.Add(basketItemx);
             }
-            request.BasketItems = basketItems;
-
+            CreatePaymentRequest request = new CreatePaymentRequest
+            {
+                Locale = Locale.EN.ToString(),
+                ConversationId = _conversationId,
+                Price = CalculatePrice().ToString(CultureInfo.InvariantCulture),
+                PaidPrice = (CalculatePrice() + CalculatePrice() / 10).ToString(CultureInfo.InvariantCulture),
+                Currency = Currency.USD.ToString(),
+                Installment = 1,
+                BasketId = cart.CartId.ToString(),
+                PaymentChannel = PaymentChannel.WEB.ToString(),
+                PaymentGroup = PaymentGroup.PRODUCT.ToString()
+            };
             CreateCheckoutFormInitializeRequest cfrequest = new CreateCheckoutFormInitializeRequest()
             {
-                Locale = request.Locale,
-                ConversationId = request.ConversationId,
-                Price = request.Price,
-                PaidPrice = request.PaidPrice,
-                Currency = request.Currency,
+                Locale = Locale.EN.ToString(),
+                ConversationId = _conversationId,
+                Price = CalculatePrice().ToString(CultureInfo.InvariantCulture),
+                PaidPrice = (CalculatePrice()+CalculatePrice()/10).ToString(CultureInfo.InvariantCulture),
+                Currency = Currency.USD.ToString(),
                 EnabledInstallments = new List<int> { 2, 3, 6, 9 },
-                BasketId = request.BasketId,
+                BasketId = cart.CartId.ToString(),
                 PaymentGroup = PaymentGroup.PRODUCT.ToString(),
-                Buyer = request.Buyer,
-                BasketItems = request.BasketItems,
-                BillingAddress = request.BillingAddress,
-                CallbackUrl = request.CallbackUrl,
-                PosOrderId = request.PosOrderId,
-                PaymentSource = request.PaymentSource,
+                Buyer = buyer,
+                BasketItems = basketItems,
+                BillingAddress = billingAddress,
+                CallbackUrl = "https://localhost:44385/Checkout/PaymentCallback",
             };
 
             CheckoutFormInitialize checkoutFormInitialize = CheckoutFormInitialize.Create(cfrequest, options);
             return Redirect(checkoutFormInitialize.PaymentPageUrl);
         }
+        public void Should_Retrieve_PayWithIyzico_Result(string token)
+        {
+            RetrievePayWithIyzicoRequest request = new RetrievePayWithIyzicoRequest();
+            request.ConversationId = _conversationId;
+            request.Token = token;
+            request.Locale=Locale.EN.ToString();
+            PayWithIyzico payWithIyzicoResult = PayWithIyzico.Retrieve(request, options);
+
+            RedirectToAction("PaymentSuccess",payWithIyzicoResult);
+        }
 
         [HttpPost]
         public async Task<IActionResult> PaymentCallback()
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient= new HttpClient())
             {
                 var body = await new StreamReader(Request.Body).ReadToEndAsync();
                 var token = Regex.Match(body, @"(?<=token=)[a-zA-Z0-9\-]+").Value;
-                var pwiRequest = new
-                {
-                    token = token,
-                    conversationId = _conversationId,
-                    locale = "en",
-                };
-                var pwiJson = JsonConvert.SerializeObject(pwiRequest);
-                var baseUrl = "https://sandbox-api.iyzipay.com";
-                try
-                {
-                    HttpResponseMessage response = await httpClient.PostAsync(baseUrl, new StringContent(pwiJson, Encoding.UTF8, "application/json"));
+                RetrievePayWithIyzicoRequest pwiRequest = new RetrievePayWithIyzicoRequest();
+                pwiRequest.ConversationId = _conversationId;
+                pwiRequest.Token = token;
+                pwiRequest.Locale=Locale.EN.ToString();
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseContent = await response.Content.ReadAsStringAsync();
-                        return Ok(responseContent);
-                        // Başarılı PWI Sorgulama yanıtını işle
-                    }
-                    else
-                    {
-                        // Başarısız PWI Sorgulama yanıtını işle
-                        return BadRequest("PWI Sorgulama başarısız! Hata kodu: " + response.StatusCode);
-                    }
-                }
-                catch (Exception ex)
+                PayWithIyzico payWithIyzicoResult = PayWithIyzico.Retrieve(pwiRequest, options);
+
+                
+                OrderItem orderItem = new OrderItem()
                 {
-                    // Hata durumunda işle
-                    return BadRequest("PWI Sorgulama sırasında bir hata oluştu: " + ex.Message);
-                }
+                    
+                };
+
+                Order order = new Order()
+                {
+
+                };
             }
+            return RedirectToAction("PaymentError");
 
         }
     }
