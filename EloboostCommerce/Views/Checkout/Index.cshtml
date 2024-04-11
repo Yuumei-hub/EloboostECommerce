@@ -7,36 +7,46 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/css/checkout.css"/>
-    <title>Index</title>
+    <link rel="stylesheet" href="/reference/sdks/web/static/styles/code-preview.css" preload>
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
 </head>
 <body>
-    <div class="credit-card-form">
-        <h2>Credit Card Payment</h2>
-        <form asp-action="ProcessPayment" asp-controller="Checkout">
-            <div class="form-group">
-                <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" name="cardNumber" placeholder="Card number">
-            </div>
-            <div class="form-group">
-                <label for="card-holder">Card Holder</label>
-                <input type="text" id="card-holder" name="holderName" placeholder="Card holder's name">
-            </div>
-            <div class="form-row">
-                <div class="form-group form-column">
-                    <label for="expiry-date">Expiry Date</label>
-                    <input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY">
-                </div>
-                <div class="form-group form-column">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="CVV">
-                </div>
-            </div>
-            <input type="hidden" id="amount" name="amount" value="@ViewBag.TotalPrice">
-            <input type="hidden" name="nonce" id="payment-method-nonce" />
-            <button type="submit" class="click-button">Pay Now</button>
-        </form>
+    <div id="payment-form" style="width">
+        <div id="payment-status-container"></div>
+        <div id="card-container"></div>
+        <button id="card-button" type="button">Pay</button>
     </div>
+    <script type="module">
+        const payments = Square.payments('sandbox-sq0idb-RT3u-HhCpNdbMiGg5aXuVg', 'TC4Z3ZEBKRXRH');
+        const card = await payments.card();
+        await card.attach('#card-container');
+
+        const cardButton = document.getElementById('card-button');
+        cardButton.addEventListener('click', async () => {
+            const statusContainer = document.getElementById('payment-status-container');
+
+            try {
+                const result = await card.tokenize();
+                if (result.status === 'OK') {
+                    console.log(`Payment token is ${result.token}`);
+                    statusContainer.innerHTML = "Payment Successful";
+                } else {
+                    let errorMessage = `Tokenization failed with status: ${result.status}`;
+                    if (result.errors) {
+                        errorMessage += ` and errors: ${JSON.stringify(
+                            result.errors
+                        )}`;
+                    }
+
+                    throw new Error(errorMessage);
+                }
+            } catch (e) {
+                console.error(e);
+                statusContainer.innerHTML = "Payment Failed";
+            }
+        });
+    </script>
+    <script src="~/js/payments.js"></script>
 </body>
+
 </html>

@@ -15,5 +15,7 @@ namespace EloboostCommerce.Models.Classes
         [Required]
         public int? Price { get; set; }
         public DateTime OrderDate { get; set; }
+
+        public string Status { get; set; }
     }
 }

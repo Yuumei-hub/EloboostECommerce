@@ -19,14 +19,19 @@ namespace EloboostCommerce.Controllers
         {
             Game game = _context.Games.FirstOrDefault(g=>g.GameId==gameId);
             //creates the cart item obj
-            CartItem cartItem = new CartItem {
+            CartItem cartItem = new CartItem
+            {
                 GameName = game.Title,
-                GameImgUrl= game.ImageUrl,
-                Quantity=quantity,
-                Price = price, 
-                FromSkillRating=fromSkillRating,
-                ToSkillRating=toSkillRating
+                GameImgUrl = game.ImageUrl,
+                Quantity = quantity,
+                Price = price,
+                FromSkillRating = fromSkillRating,
+                ToSkillRating = toSkillRating
             };
+
+            if(cartItem==null)
+                return Json(new {success=false, message="Error. Cart item null"});
+
             if (ModelState.IsValid)
             {
                 Cart cart = GetOrCreateCartForUser();

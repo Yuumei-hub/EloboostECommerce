@@ -21,6 +21,7 @@ namespace EloboostCommerce.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult LoginForm( User user)
         {
             var userfromDb= _context.Users.FirstOrDefault(x=>x.Email==user.Email&& x.Password==user.Password);
@@ -39,6 +40,29 @@ namespace EloboostCommerce.Controllers
             var authProperties = new AuthenticationProperties { };
             HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity), authProperties);
             return RedirectToAction("Index", "Default");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RegisterForm(User user)
+        {
+            using (_context)
+            {
+                bool userExists = _context.Users.Any(u => u.Username == user.Username || u.Email == user.Email);
+
+                if (userExists)
+                {
+                    ModelState.AddModelError("", "This username or email already exist.");
+                    return PartialView();
+                }
+                else
+                {
+                    user.IsBooster = false;
+                    _context.Users.Add(user);
+                    _context.SaveChanges();
+                    return View("Index");
+                }
+            }
         }
 
         /*

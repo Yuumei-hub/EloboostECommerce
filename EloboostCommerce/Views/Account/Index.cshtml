@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    var userdata = ViewBag.UserData;
+}
+
+<div class="content-section-title">
+    Account Details & Settings
+</div>
+<form asp-action="UpdateAccount" asp-controller="Account" method="post">
+    <div class="content-section-title">
+        Profile Infos
+    </div>
+    <div class="content-section" style="width:300px;">
+        <label>Username:</label>
+        <input name="Username" value="@userdata.Username" required style="width: 200px;" />
+        <br />
+        <label>Email Address:</label>
+        <input value="@userdata.Email" required style="width: 200px;" />
+        <!--todo-->
+        <!--
+        <label>Profile Picture</label>
+        <input value="userdata.Picture"/>-->
+        <br />
+
+    </div>
+    <br />
+    <br />
+
+    <div class="content-section-title">
+        Contact Infos
+    </div>
+    <div class="content-section" style="width:300px;">
+        <label>Address:</label>
+        <input name="Address" value="@userdata.Address" style="width: 200px;" />
+        <br />
+
+        <label>Phone Number:</label>
+        <input name="PhoneNumber" value="@userdata.PhoneNumber" style="width: 200px;" />
+    </div>
+</form>
+
+
+

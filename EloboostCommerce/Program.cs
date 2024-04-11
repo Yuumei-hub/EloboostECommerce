@@ -1,9 +1,11 @@
 ﻿using EloboostCommerce.Models.Classes;
+using EloboostCommerce.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Http;
 using System.Threading.Tasks;
+using EloboostCommerce.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Context>(options =>
@@ -18,6 +20,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     );
 
 // Add services to the container.
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 builder.Services.AddControllersWithViews();
 
 

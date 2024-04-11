@@ -245,3 +245,15 @@ C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Sy
 C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Iyzipay.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\APIMatic.Core.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Microsoft.Bcl.HashCode.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Microsoft.Json.Pointer.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Polly.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\Square.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\System.Collections.Immutable.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\RestSharp.Newtonsoft.Json.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\SquareConnectApiClient.Client.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\SquareConnectApiClient.V1.dll
+C:\Users\Acer\source\repos\EloboostCommerce\EloboostCommerce\bin\Debug\net6.0\SquareConnectApiClient.V2.dll
