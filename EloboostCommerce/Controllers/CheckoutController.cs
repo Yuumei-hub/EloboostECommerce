@@ -23,6 +23,7 @@ using HttpClient = System.Net.Http.HttpClient;
 using System.Globalization;
 using NuGet.ContentModel;
 using System.Net.Http;
+using OrderItem = Iyzipay.Model.OrderItem;
 
 namespace EloboostCommerce.Controllers
 {
@@ -131,16 +132,6 @@ namespace EloboostCommerce.Controllers
             CheckoutFormInitialize checkoutFormInitialize = CheckoutFormInitialize.Create(cfrequest, options);
             return Redirect(checkoutFormInitialize.PaymentPageUrl);
         }
-        public void Should_Retrieve_PayWithIyzico_Result(string token)
-        {
-            RetrievePayWithIyzicoRequest request = new RetrievePayWithIyzicoRequest();
-            request.ConversationId = _conversationId;
-            request.Token = token;
-            request.Locale=Locale.EN.ToString();
-            PayWithIyzico payWithIyzicoResult = PayWithIyzico.Retrieve(request, options);
-
-            RedirectToAction("PaymentSuccess",payWithIyzicoResult);
-        }
 
         [HttpPost]
         public async Task<IActionResult> PaymentCallback()
@@ -156,18 +147,28 @@ namespace EloboostCommerce.Controllers
 
                 PayWithIyzico payWithIyzicoResult = PayWithIyzico.Retrieve(pwiRequest, options);
 
-                
-                OrderItem orderItem = new OrderItem()
+                if (payWithIyzicoResult.Status == "success")
                 {
-                    
-                };
+                    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    User user = _context.Users.FirstOrDefault(u => u.UserId.ToString() == userId);
+                    Order order = new Order()
+                    {
+                        OrderId = Guid.NewGuid().ToString(),
+                        OrderDate = DateTime.Now,
+                        Amount = decimal.Parse(payWithIyzicoResult.Price),
+                        PaymentMethod = payWithIyzicoResult.CardAssociation + " " + payWithIyzicoResult.CardType,
+                        Status=payWithIyzicoResult.Status,
+                        User=user,
+                        Description=""
+                    };
+                    _context.Orders.Add(order);
+                    _context.SaveChangesAsync();
 
-                Order order = new Order()
-                {
-
-                };
+                    return RedirectToAction("Index","Order");
+                }
+                else
+                    return Redirect("PaymentError");
             }
-            return RedirectToAction("PaymentError");
 
         }
     }

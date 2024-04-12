@@ -15,7 +15,13 @@ namespace EloboostCommerce.Controllers
             var orders = _context.Orders.ToList();
             return View(orders);
         }
-        public IActionResult Details(int orderId)
+
+        public IActionResult PaymentSuccessful()
+        {
+            return View();
+        }
+
+        public IActionResult Details(string orderId)
         {
             var order = _context.Orders.FirstOrDefault(o => o.OrderId == orderId);
             if (order == null)
@@ -28,21 +34,8 @@ namespace EloboostCommerce.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult CreateOrder(Order order)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Orders.Add(order);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(order);
-        }
-
         //GET
-        public IActionResult EditOrder(int orderId)
+        public IActionResult EditOrder(string orderId)
         {
             var order = _context.Orders.FirstOrDefault(o=>o.OrderId==orderId);
             if(order==null)
@@ -53,7 +46,7 @@ namespace EloboostCommerce.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditOrder(int orderId, Order order)
+        public IActionResult EditOrder(string orderId, Order order)
         {
             if (orderId != order.OrderId)
                 return BadRequest();
@@ -73,7 +66,7 @@ namespace EloboostCommerce.Controllers
             return View(order);
         }
 
-        public IActionResult Delete(int orderId)
+        public IActionResult Delete(string orderId)
         {
             var order = _context.Orders.FirstOrDefault(o=>o.OrderId==orderId);
             if (order == null)
@@ -87,7 +80,7 @@ namespace EloboostCommerce.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int orderId)
+        public IActionResult DeleteConfirmed(string orderId)
         {
             var order = _context.Orders.FirstOrDefault(o => o.OrderId == orderId);
             if (order == null)

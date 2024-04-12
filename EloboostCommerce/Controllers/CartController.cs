@@ -18,6 +18,7 @@ namespace EloboostCommerce.Controllers
         public JsonResult AddCartItem(int quantity,double price,string fromSkillRating, string toSkillRating, int gameId)
         {
             Game game = _context.Games.FirstOrDefault(g=>g.GameId==gameId);
+
             //creates the cart item obj
             CartItem cartItem = new CartItem
             {
